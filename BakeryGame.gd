@@ -49,33 +49,40 @@ func _ready():
 		add_child(temp_heart)
 		temp_heart.get_child(0).modulate = meat_color
 		
+		#Cooked Hearts
+		var temp_cooked_heart = Heart.instance()
+		temp_cooked_heart.position = $TileMap.map_to_world( Vector2(5+2*i, 24) )
+		add_child(temp_cooked_heart)
+		temp_cooked_heart.get_child(0).modulate = meat_color
+		temp_cooked_heart.cook_golden()
+		
 		#Steak
 		var temp_steak = Steak.instance()
-		temp_steak.position = $TileMap.map_to_world( Vector2(5+2*i, 24) )
+		temp_steak.position = $TileMap.map_to_world( Vector2(5+2*i, 26) )
 		add_child(temp_steak)
 		temp_steak.get_child(0).modulate = meat_color
 		
-		#Cooked Steak - DOESNT ACTUALLY LOOK GOOD
-		var temp_cooked_steak = Steak.instance()
-		temp_cooked_steak.position = $TileMap.map_to_world( Vector2(5+2*i, 26) )
-		add_child(temp_cooked_steak)
-		temp_cooked_steak.get_child(0).modulate = meat_color
-		temp_cooked_steak.modulate = meat_color
-		#temp_steak.modulate = meat_color #meat takes on a random color modulation when cooked!!
-		#BAD IDEA>>> BUT!!!!
-		#GOLDEN YELLOW FAT COLORING LOOKS AWESOME!!
-		
-		#Another version of cooked steak - random doesn't look good
-		var temp_random_cooked_steak = Steak.instance()
-		temp_random_cooked_steak.position = $TileMap.map_to_world( Vector2(5+2*i, 28) )
-		add_child(temp_random_cooked_steak)
-		temp_random_cooked_steak.get_child(0).modulate = meat_color
-		temp_random_cooked_steak.cook_random()
-		#Looks too otherworldly.....
+#		#Cooked Steak - DOESNT ACTUALLY LOOK GOOD
+#		var temp_cooked_steak = Steak.instance()
+#		temp_cooked_steak.position = $TileMap.map_to_world( Vector2(5+2*i, 26) )
+#		add_child(temp_cooked_steak)
+#		temp_cooked_steak.get_child(0).modulate = meat_color
+#		temp_cooked_steak.modulate = meat_color
+#		#temp_steak.modulate = meat_color #meat takes on a random color modulation when cooked!!
+#		#BAD IDEA>>> BUT!!!!
+#		#GOLDEN YELLOW FAT COLORING LOOKS AWESOME!!
+#
+#		#Another version of cooked steak - random doesn't look good
+#		var temp_random_cooked_steak = Steak.instance()
+#		temp_random_cooked_steak.position = $TileMap.map_to_world( Vector2(5+2*i, 28) )
+#		add_child(temp_random_cooked_steak)
+#		temp_random_cooked_steak.get_child(0).modulate = meat_color
+#		temp_random_cooked_steak.cook_random()
+#		#Looks too otherworldly.....
 		
 		#Cooked steak - Golden Brown
 		var temp_golden_cooked_steak = Steak.instance()
-		temp_golden_cooked_steak.position = $TileMap.map_to_world( Vector2(5+2*i, 30) )
+		temp_golden_cooked_steak.position = $TileMap.map_to_world( Vector2(5+2*i, 28) )
 		add_child(temp_golden_cooked_steak)
 		temp_golden_cooked_steak.get_child(0).modulate = meat_color
 		temp_golden_cooked_steak.cook_golden()

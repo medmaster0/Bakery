@@ -22,16 +22,20 @@ func _ready():
 #A function to cook the steak
 #Changes the color of the steak a random yellow or brown (gold?)
 func cook_golden():
-	#DOESNT WORK YET RANDOM COLOR RIGHT NOW!!!
-	#$Sprite2.modulate = Color(randf(), randf(), randf())
+
+	var cook_color #The color of the transparent mask that's overlayed on meat
+
 	if randi()%2 == 0:
-		$Sprite2.modulate = MedAlgo.generate_brown()
+		cook_color = MedAlgo.generate_brown()
 	else:
-		$Sprite2.modulate = MedAlgo.generate_gold()
-		#$Sprite2.modulate = MedAlgo.generate_brown()
+		#cook_color = MedAlgo.generate_gold()
+		cook_color = MedAlgo.generate_brown()
 	
-	$Sprite3.modulate = $Sprite2.modulate #make same as fat color
+	$Sprite3.modulate = cook_color #make the color
 	$Sprite3.visible = true #and turn on
+	
+	#ORRR just make the hole thing modulate...
+#	modulate = cook_color
 	
 
 #A function to cook the steak
